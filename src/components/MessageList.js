@@ -1,20 +1,17 @@
-import React from "react"
+import React from "react";
+import Message from "./Message";
 
-const Messagelist = (props) => { 
+const Messagelist = (props) => {
+  const messages = props.messages.map((message) => {
+    return <Message message={message} button="DELETE" />;
+  });
 
-    const messages = props.messages.map((message) => {
-        return (<div>
-        <div>{message}</div>
-        <br/>
-        </div>)
-    
-    })
+  return (
+    <div>
+      <Message message={{ message: "" }} button="ADD" />
+      <div className="message-list">{messages}</div>
+    </div>
+  );
+};
 
-return (
-<div>{messages}
-</div>
-)
-
-}
-
-export default Messagelist 
+export default Messagelist;

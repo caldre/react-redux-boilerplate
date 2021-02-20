@@ -1,4 +1,3 @@
 export const messageReducer = (messageList = [], action) => {
-  return [...messageList]
-}
-
+  return [...messageList];
+};
