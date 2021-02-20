@@ -32,3 +32,7 @@
     transform: rotate(360deg);
   }
 }
+
+.message-list {
+  padding-top: 10px;
+}
