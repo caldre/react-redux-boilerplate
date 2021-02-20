@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react"
 
 const Messagelist = (props) => { 
@@ -18,3 +19,18 @@ return (
 }
 
 export default Messagelist 
+=======
+import React from 'react'
+
+const MessageList = () => {
+  return (
+    <div>
+      MESSAGE
+      MESSAGE
+      MESSAGE
+    </div>
+  )
+}
+
+export default MessageList
+>>>>>>> 9fabcc3d30285f24caa055426186c57e18063146
