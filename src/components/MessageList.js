@@ -1,20 +1,18 @@
-import React from "react"
+import React from "react";
+import { useSelector } from "react-redux";
 
-const Messagelist = (props) => { 
-
-    const messages = props.messages.map((message) => {
-        return (<div>
+const Messagelist = () => {
+  const messages = useSelector((state) => state.messageReducer);
+  const rendermessages = messages.map((message) => {
+    return (
+      <div>
         <div>{message}</div>
-        <br/>
-        </div>)
-    
-    })
+        <br />
+      </div>
+    );
+  });
 
-return (
-<div>{messages}
-</div>
-)
+  return <div>{rendermessages}</div>;
+};
 
-}
-
-export default Messagelist 
+export default Messagelist;
