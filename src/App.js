@@ -3,11 +3,13 @@ import MessageInput from './components/MessageInput'
 import MessageList from './components/MessageList';
 import './App.css';
 
+const messages = ["kakka", "ruusu on paskaa", "miksi käärmeitä", "vasemmiston juonia, kaljaa"]
+
 const App = () => {
   return (
     <div className="App">
       <MessageInput />
-      <MessageList />
+      <MessageList messages={messages} />
     </div>
   );
 }
