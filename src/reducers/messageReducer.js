@@ -1,12 +1,21 @@
-<<<<<<< HEAD
-import { ADD_MESSAGE } from "../actions/actionTypes";
+import {
+  ADD_MESSAGE,
+  DELETE_MESSAGE,
+  EDIT_MESSAGE,
+} from "../actions/actionTypes";
 
 export const messageReducer = (messagelist = [], action) => {
-  if (action.type == ADD_MESSAGE) {
-    return [...messagelist, action.payload];
-  } else return [...messagelist];
-=======
-export const messageReducer = (messageList = [], action) => {
-  return [...messageList];
->>>>>>> 43c0184b70108245571e87ef1d225c9441549044
+  switch (action.type) {
+    case ADD_MESSAGE:
+      return [...messagelist, action.payload];
+
+    case EDIT_MESSAGE:
+      return;
+
+    case DELETE_MESSAGE:
+      return;
+
+    default:
+      return [...messagelist];
+  }
 };

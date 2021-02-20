@@ -3,14 +3,14 @@ import { addMessage } from "../actions/messageActions";
 import { useDispatch } from "react-redux";
 
 const MessageInput = () => {
-  const [message, setMessage] = useState("");
+  const [text, setText] = useState("");
 
   const dispatch = useDispatch();
 
   const handleAddMessage = (e) => {
     e.preventDefault();
-    dispatch(addMessage(message));
-    setMessage("");
+    dispatch(addMessage(text));
+    setText("");
   };
 
   return (
@@ -19,8 +19,8 @@ const MessageInput = () => {
         <input
           id="message-input"
           name="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           placeholder="Enter message.."
         ></input>
         <button>ADD MESSAGE</button>

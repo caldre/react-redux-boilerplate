@@ -1,17 +1,17 @@
 import * as types from "./actionTypes";
 import { v4 as uuid } from "uuid";
 
-export const addMessage = (message) => {
+export const addMessage = (text) => {
   return {
     type: types.ADD_MESSAGE,
-    payload: { id: uuid(), message },
+    payload: { id: uuid(), text },
   };
 };
 
-export const editMessage = (id, message) => {
+export const editMessage = (id, text) => {
   return {
     type: types.EDIT_MESSAGE,
-    payload: { id, message },
+    payload: { id, text },
   };
 };
 

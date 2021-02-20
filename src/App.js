@@ -13,13 +13,8 @@ const messages = [
 const App = () => {
   return (
     <div className="App">
-<<<<<<< HEAD
       <MessageInput />
       <MessageList />
-=======
-      {/* <MessageInput /> */}
-      <MessageList messages={messages} />
->>>>>>> 43c0184b70108245571e87ef1d225c9441549044
     </div>
   );
 };
