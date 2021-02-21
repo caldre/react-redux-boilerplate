@@ -9,7 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 
 const store = createStore(
   rootReducer,
-  [],
+  { messageReducer: [] },
   window.__REDUX_DEVTOOLS_EXTENSION__?.()
 );
 

@@ -1,32 +1,34 @@
 import React, { useState } from "react";
-import { addMessage, editMessage } from "../actions/messageActions";
+import { editMessage, deleteMessage } from "../actions/messageActions";
 import { useDispatch } from "react-redux";
 
-const Message = ({ message, button }) => {
-  const [stateMessage, setMessage] = useState(message || "");
+const Message = ({ message }) => {
+  const [stateMessage, setMessage] = useState(message.text || "");
 
   const dispatch = useDispatch();
 
-  const handleAddMessage = (e) => {
-    e.preventDefault();
-    dispatch(addMessage(message));
-    setMessage("");
-  };
-
   const handleEditMessage = (e) => {
     e.preventDefault();
+    dispatch(editMessage(message.id, stateMessage));
+    console.log("BLURRING");
+  };
+
+  const handleDeleteMessage = (e) => {
+    e.preventDefault();
+    dispatch(deleteMessage(message.id));
+    console.log("DELETING");
   };
 
   return (
-    <form onSubmit={(e) => handleAddMessage(e)}>
+    <form onSubmit={(e) => handleDeleteMessage(e)}>
       <input
+        onChange={(e) => setMessage(e.target.value)}
+        onBlur={(e) => handleEditMessage(e)}
         id="message-input"
         name="message"
         value={stateMessage}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Enter message.."
       ></input>
-      <button>{button}</button>
+      <button>DELETE</button>
     </form>
   );
 };

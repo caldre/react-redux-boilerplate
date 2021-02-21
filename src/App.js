@@ -1,20 +1,16 @@
 import React from "react";
 import MessageInput from "./components/MessageInput";
 import MessageList from "./components/MessageList";
-import "./App.css";
 
-const messages = [
-  "kakka",
-  "ruusu on paskaa",
-  "miksi käärmeitä",
-  "vasemmiston juonia, kaljaa",
-];
+import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <MessageInput />
-      <MessageList />
+      <div className="container">
+        <MessageList />
+        <MessageInput />
+      </div>
     </div>
   );
 };

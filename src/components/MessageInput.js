@@ -9,21 +9,23 @@ const MessageInput = () => {
 
   const handleAddMessage = (e) => {
     e.preventDefault();
-    dispatch(addMessage(text));
-    setText("");
+    if (text) {
+      dispatch(addMessage(text));
+      setText("");
+    }
   };
 
   return (
-    <div className="App">
+    <div className="message-input-wrapper">
       <form onSubmit={(e) => handleAddMessage(e)}>
         <input
-          id="message-input"
+          className="message-input"
           name="message"
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter message.."
         ></input>
-        <button>ADD MESSAGE</button>
+        <button className="submit-btn">--></button>
       </form>
     </div>
   );

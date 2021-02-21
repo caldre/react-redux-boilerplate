@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  min-height: 20vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,30 +9,28 @@
   color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+  align-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.message-list-wrapper {
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.message-input-wrapper {
+  display: flex;
+  background-color: #61dafb;
+  align-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message-input {
+  align-content: flex-end;
 }
 
-.message-list {
-  padding-top: 10px;
+.submit-btn {
+  align-content: flex-end;
 }

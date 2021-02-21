@@ -4,18 +4,29 @@ import {
   EDIT_MESSAGE,
 } from "../actions/actionTypes";
 
-export const messageReducer = (messagelist = [], action) => {
+export const messageReducer = (messageList = [], action) => {
+  let arrayOfIds = [];
+  let indexOfItem;
   switch (action.type) {
     case ADD_MESSAGE:
-      return [...messagelist, action.payload];
+      // console.log("REDUCER: Adding message to list");
+      return [...messageList, action.payload];
 
     case EDIT_MESSAGE:
-      return;
+      // console.log("REDUCER: Editing message");
+      messageList.forEach((message) => arrayOfIds.push(message.id));
+      indexOfItem = arrayOfIds.indexOf(action.payload.id);
+      messageList[indexOfItem].text = action.payload.text;
+      return [...messageList];
 
     case DELETE_MESSAGE:
-      return;
+      // console.log("REDUCER: Removing message from list");
+      const newState = messageList.filter(
+        (message) => message.id !== action.payload
+      );
+      return [...newState];
 
     default:
-      return [...messagelist];
+      return [...messageList];
   }
 };
